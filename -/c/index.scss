@@ -1,0 +1,106 @@
+// http://anthonyshort.me/2012/03/scss-coding-style
+// http://compass-style.org/help/tutorials/spriting/
+// http://sass-lang.com/tutorial.html
+// Typekit: "ff-tisa-sans-web-pro"  "ff-tisa-web-pro"
+
+
+/* RESET */
+/* YUI Reset version: 2.7.0 */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td { margin: 0; padding: 0; }
+table { border-collapse: collapse; border-spacing: 0; }
+fieldset,img { border: 0; }
+address,caption,cite,code,dfn,em,strong,th,var,optgroup { font-style: inherit; font-weight: inherit; }
+del,ins { text-decoration: none; }
+li { list-style: none; }
+caption, th { text-align: left; }
+h1,h2,h3,h4,h5,h6 {	font-size: 100%; font-weight: normal; }
+q:before, q:after {	content: ''; }
+abbr,acronym { border: 0; font-variant: normal; }
+sup { vertical-align: baseline; }
+sub { vertical-align: baseline; }
+/*because legend doesn't inherit in IE */
+legend { color: #000; }
+input,button,textarea,select,optgroup,option { font-family: inherit; font-size: inherit; font-style: inherit; font-weight: inherit; }
+input,button,textarea,select { *font-size: 100%; }
+
+// Colors
+  //Pink: 231,111,95
+
+
+// Variables
+$radius: 4px;
+$radius-small: 3px;
+$serif: "ff-tisa-web-pro", Georgia, Times, serif;
+$sans: "ff-tisa-sans-web-pro", Helvetica, Arial, sans-serif;
+$pink: rgba(231,111,95,1);
+$grey: #666;
+$white: #fff;
+$white-light: #f7f7f1;
+$boxshadow: 0px 0px 5px rgba(0,0,0,0.1);
+$border-color: #cacaca;
+
+// Mixins 
+@mixin borderRadius {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+} 
+
+@mixin textFieldClean {
+  border: 0;  
+  @include borderRadius;
+  padding: 10px
+}
+
+// Body Styles
+body {
+  background: rgba(0,0,0,0.1);
+  font: 1em $sans
+}
+
+
+.wrap { max-width: 1000px; margin: 0 auto; padding: 20px 0 20px 0; }
+
+
+// Type Styles
+
+h1 {  }
+h2 { font-size: 2em; color: $grey; }
+p { color: $grey; }
+p.date {  }
+a { color: $pink; text-decoration: none; }
+.meta { font: 1em $grey;  }
+// Header 
+
+#header { background: #f8f5ef; }
+#header nav { float: right; }
+#header nav li { display: inline; margin-left: 20px;}
+#header #main-logo { }
+
+
+// Content Area
+#content { margin-top: 100px; }
+
+#notifications { width: 100%; }
+#notifications .close { float: right; width: 5px; }
+#notifications #time-left { float: left; width: 340px; }
+#notification #calendar-tout { float: right; width: 200px; }
+
+
+// Conversations 
+#conversations {  }
+.conversation {  }
+.conversation header { padding: 20px; }
+.conversation header .author { float: left; margin-right: 20px; width: 64px; text-align: center; }
+.conversation header .author img { border-radius: $radius; }
+.conversation .post-wrapper { float: left; width: 500px; clear: both; position: relative; z-index: 2; }
+.conversation .post-content { width: 460px; background: $white; padding: 20px; border-radius: $radius; float: left; clear: both; box-shadow: $boxshadow; border: 1px solid $border-color; }
+.conversation .discussion { float: left; width: 450px; background: $white-light; border-radius: $radius; margin-left: -20px; padding: 20px 20px 20px 40px; position: relative; z-index: 1; border: 1px solid $border-color;  }
+
+
+
+// Clearfix
+.cf:before, .cf:after {content:" "; display:table;}
+.cf:after {clear: both;}
+  //IE
+  .cf {*zoom: 1;}
