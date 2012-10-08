@@ -56,7 +56,7 @@ input, button, textarea, select {
 
 body {
   background: rgba(0, 0, 0, 0.1);
-  font: 1em "ff-tisa-sans-web-pro", Helvetica, Arial, sans-serif; }
+  font: 1em "freight-sans-pro", Helvetica, Arial, sans-serif; }
 
 .wrap {
   max-width: 1000px;
@@ -85,7 +85,103 @@ a {
 
 #header nav li {
   display: inline;
-  margin-left: 20px; }
+  margin-left: 30px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px; }
+
+input[type=email], input[type=text] {
+  border: 0;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  padding: 10px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+#landing .logo {
+  margin: 50px 0 250px; }
+
+#landing {
+  background: white url(/_/i/home-bg-blur.jpg) no-repeat;
+  background-size: 100%; }
+
+#landing .copy h2 {
+  font: bold 42px/44px "freight-sans-pro", Helvetica, Arial, sans-serif;
+  margin-bottom: 12px;
+  color: #fff; }
+
+#landing .copy p {
+  font: normal 26px/32px "freight-sans-pro", Helvetica, Arial, sans-serif;
+  color: #d7dcc1; }
+
+#landing #sign-up {
+  position: relative;
+  top: 500px; }
+
+#landing a.action {
+  background: rgba(182, 48, 31, 0.75);
+  opacity: 0.75;
+  color: #fff;
+  padding: 1em 1em;
+  font: 100 38px "freight-sans-pro", Helvetica, Arial, sans-serif;
+  width: 100%;
+  text-align: center;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+#landing form {
+  background: rgba(255, 255, 255, 0.7);
+  margin-top: 4px;
+  clear: both;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 1em;
+  display: none;
+  margin-bottom: 100px; }
+
+#landing form .first, #landing form .second {
+  float: left;
+  width: 47%;
+  margin-right: 20px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+#landing form .second {
+  margin-right: 0; }
+
+#landing form .button {
+  background: #b6301f;
+  border: 0;
+  padding: 0.6em 1.3em;
+  color: #fff;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px; }
+
+#landing form input[type=text] {
+  margin: 1em 0; }
+
+#landing form input[type=submit] {
+  width: 100%;
+  margin: 20px 0;
+  font-size: 28px; }
+
+#landing form .amp {
+  position: absolute;
+  font: italic 64px "Adobe Garamond Pro", "Adobe Caslon Pro", Times, Georgia, serif;
+  color: rgba(203, 203, 203, 0.5);
+  text-align: center;
+  left: 175px;
+  z-index: 1; }
 
 #content {
   margin-top: 100px; }
@@ -145,6 +241,9 @@ a {
   z-index: 1;
   border: 1px solid #cacaca; }
 
+#footer {
+  clear: both; }
+
 .cf:before, .cf:after {
   content: " ";
   display: table; }
@@ -154,3 +253,6 @@ a {
 
 .cf {
   *zoom: 1; }
+
+.clear {
+  clear: both; }

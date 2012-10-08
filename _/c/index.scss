@@ -1,7 +1,7 @@
 // http://anthonyshort.me/2012/03/scss-coding-style
 // http://compass-style.org/help/tutorials/spriting/
 // http://sass-lang.com/tutorial.html
-// Typekit: "ff-tisa-sans-web-pro"  "ff-tisa-web-pro"
+// Typekit: freight-sans-pro"
 
 
 /* RESET */
@@ -13,8 +13,8 @@ address,caption,cite,code,dfn,em,strong,th,var,optgroup { font-style: inherit; f
 del,ins { text-decoration: none; }
 li { list-style: none; }
 caption, th { text-align: left; }
-h1,h2,h3,h4,h5,h6 {	font-size: 100%; font-weight: normal; }
-q:before, q:after {	content: ''; }
+h1,h2,h3,h4,h5,h6 { font-size: 100%; font-weight: normal; }
+q:before, q:after { content: ''; }
 abbr,acronym { border: 0; font-variant: normal; }
 sup { vertical-align: baseline; }
 sub { vertical-align: baseline; }
@@ -31,14 +31,14 @@ input,button,textarea,select { *font-size: 100%; }
 $radius: 4px;
 $radius-small: 3px;
 $serif: "ff-tisa-web-pro", Georgia, Times, serif;
-$sans: "ff-tisa-sans-web-pro", Helvetica, Arial, sans-serif;
+$sans: "freight-sans-pro", Helvetica, Arial, sans-serif;
 $pink: rgba(231,111,95,1);
 $grey: #666;
 $white: #fff;
 $white-light: #f7f7f1;
 $boxshadow: 0px 0px 5px rgba(0,0,0,0.1);
 $border-color: #cacaca;
-
+$color-action: #b6301f;
 // Mixins 
 @mixin borderRadius {
   -webkit-border-radius: $radius;
@@ -51,6 +51,13 @@ $border-color: #cacaca;
   @include borderRadius;
   padding: 10px
 }
+
+@mixin borderBox {
+  -webkit-box-sizing: border-box; 
+  -moz-box-sizing: border-box; 
+  box-sizing: border-box;
+}
+
 
 // Body Styles
 body {
@@ -74,10 +81,30 @@ a { color: $pink; text-decoration: none; }
 
 #header { background: #f8f5ef; }
 #header nav { float: right; }
-#header nav li { display: inline; margin-left: 20px;}
+#header nav li { display: inline; margin-left: 30px; @include borderRadius; }
 #header #main-logo { }
 
+// Global Styles
 
+  // Fields
+  input[type=email], input[type=text] { @include textFieldClean; @include borderRadius; width: 100%; @include borderBox; }
+
+
+// Landing Page
+#landing .logo { margin: 50px 0 250px; }
+#landing { background: #fff url(/_/i/home-bg-blur.jpg) no-repeat; background-size: 100%; }
+#landing .copy h2 { font: bold 42px/44px $sans; margin-bottom: 12px; color: #fff; }
+#landing .copy p { font: normal 26px/32px $sans; color: #d7dcc1 }
+#landing #sign-up { position: relative; top: 500px; }
+#landing a.action { background: rgba(182,48,31,0.75); opacity: 0.75; color: #fff; padding: 1em 1em; font: 100 38px $sans; width: 100%; text-align: center; @include borderBox }
+
+  #landing form { background: rgba(255,255,255,0.7); margin-top: 4px; clear: both; @include borderBox; padding: 1em; display: none; margin-bottom: 100px; }
+  #landing form .first, #landing form .second { float: left; width: 47%; margin-right: 20px; @include borderBox; }
+  #landing form .second { margin-right: 0; }
+  #landing form .button { background: $color-action; border: 0; padding: 0.6em 1.3em; color: #fff; @include borderRadius; }
+  #landing form input[type=text] { margin: 1em 0;}
+  #landing form input[type=submit] { width: 100%; margin: 20px 0; font-size: 28px; }
+  #landing form .amp { position: absolute; font: italic 64px "Adobe Garamond Pro", "Adobe Caslon Pro", Times, Georgia, serif; color: rgba(203,203,203,0.5); text-align: center; left: 175px; z-index: 1; }
 // Content Area
 #content { margin-top: 100px; }
 
@@ -99,8 +126,12 @@ a { color: $pink; text-decoration: none; }
 
 
 
+// Footer
+#footer { clear: both; }
+
 // Clearfix
 .cf:before, .cf:after {content:" "; display:table;}
 .cf:after {clear: both;}
   //IE
   .cf {*zoom: 1;}
+.clear { clear: both; }
